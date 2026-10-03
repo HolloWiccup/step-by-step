@@ -1,16 +1,14 @@
-#define BTN_BUILTIN 3
+#define BTN_RGB_LED 3
+#define RGB_LED 2
 
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  pinMode(LED_BUILTIN, OUTPUT);
-  pinMode(BTN_BUILTIN, INPUT_PULLUP);
+  pinMode(RGB_LED, OUTPUT);
+  pinMode(BTN_RGB_LED, INPUT_PULLUP);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  // Serial.println("hello");
-  // delay(1000);
-  digitalWrite(LED_BUILTIN, !digitalRead(BTN_BUILTIN));
+  digitalWrite(RGB_LED, digitalRead(BTN_RGB_LED));
   delay(100);
 }
